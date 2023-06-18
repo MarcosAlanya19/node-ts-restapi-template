@@ -3,11 +3,11 @@ import { Server } from './models/server';
 
 dotenv.config();
 
-const serverConfig = {
+export const ServerConfig = {
   port: process.env.PORT ?? '3000',
   userPath: '/api/usuarios',
 };
 
-const server = new Server(serverConfig);
+const server = new Server(ServerConfig);
 
 server.listen();

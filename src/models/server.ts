@@ -1,16 +1,12 @@
 import cors from 'cors';
 import express from 'express';
 import { router as userRouter } from '../routes/user.routes';
-
-interface ServerConfig {
-  port: string;
-  userPath: string;
-}
+import { ServerConfig } from '../app';
 
 export class Server {
   private app: express.Application;
 
-  constructor(private config: ServerConfig) {
+  constructor(private config: typeof ServerConfig) {
     this.app = express();
 
     this.middlewares();
